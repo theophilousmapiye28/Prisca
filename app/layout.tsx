@@ -13,7 +13,7 @@ import Expereince from '../components/Expereince';
 import  Portfolio from '../components/Portfolio';
 import Contact from "../components/Contact";
 import Footer from "../components/Footer"
-import Subscribe from "@/components/subscribe";
+import Subscribe from "../components/Subscribe";
 
 
 const inter = Inter({ subsets: ["latin"] });
