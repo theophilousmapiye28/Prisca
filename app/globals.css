@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+
+  
+
+  /* Example of setting a fallback font */
+  body {
+    font-family: 'YourCustomFont', sans-serif;
+  }
+  
+  
+
+  
+  
+
+
+  .logo {
+    color:black;
+    display:inline-lock;
+    font-weight: 600;
+  }
+  .header {
+      background-color: white;
+      box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+      position: fixed;
+      width: 100%;
+      z-index: 3;
+  }
+  
+  .header ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow: hidden;
+      background-color: #00000000;
+      font-weight: 600;
+  }
+  
+  .header li a {
+      display: block;
+      padding: 20px 20px;
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+      margin: 1px;
+  }
+  
+  .header li a:hover,
+  .header .menu-btn:hover {
+      background-color: #f4f4f400;
+  }
+  
+  .header .logo {
+      display: block;
+      float: left;
+      font-size: 2em;
+      margin-left: 30px;
+      padding: 10px 20px 10px 20px;
+      text-decoration: none;
+  }
+  
+  /* menu */
+  
+  .header .menu {
+      clear: both;
+      max-height: 0;
+      transition: max-height .2s ease-out;
+  }
+  
+  /* menu icon */
+  
+  .header .menu-icon {
+      cursor: pointer;
+      display: inline-block;
+      float: right;
+      padding: 28px 20px;
+      position: relative;
+      user-select: none;
+  }
+  
+  .header .menu-icon .navicon {
+      background: black;
+      display: block;
+      height: 2px;
+      position: relative;
+      transition: background .2s ease-out;
+      width: 18px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+      background: black;
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all .2s ease-out;
+      width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+      top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+      top: -5px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+      display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu {
+      max-height: 240px;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+      background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+      transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+      transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+      top: 0;
+  }
+  
+  /* 48em = 768px */
+  
+  @media (min-width: 48em) {
+      .header li {
+          float: left;
+      }
+      .header li a {
+          padding: 22px 14px;
+      }
+      .header .menu {
+          clear: none;
+          float: right;
+          max-height: none;
+      }
+      .header .menu-icon {
+          display: none;
+      }
+  }
+
+
+/* text animation */
+.typewriter {
+  font-family: 'Arial', sans-serif;
+  color: white;
+  font-size: 34px;
+  font-weight: 600;
+  min-width: 280px;
+  position: relative;
+}
+
+.dynamic-text {
+  color: black;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid black;
+  display: inline-block;
+  width: 0;
+  position: absolute;
+  opacity: 0; /* Hidden by default */
+  animation: blink 0.75s step-end infinite alternate;
+}
+
+/* Typing effect for each role */
+@keyframes typing {
+  0% {
+    width: 0;
+    opacity: 1; /* Show the text when typing starts */
+  }
+  40% {
+    width: 100%;
+    opacity: 1;
+  }
+  50% {
+    width: 100%;
+    opacity: 1;
+  }
+  100% {
+    width: 0;
+    opacity: 0; /* Hide the text after typing is done */
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Apply animations for each role */
+.typewriter .role1 {
+  width: 0;
+  animation: typing 3s steps(20, end) 0s 1 normal forwards, blink 0.75s step-end infinite alternate;
+}
+
+.typewriter .role2 {
+  width: 0;
+  animation: typing 3s steps(20, end) 3s 1 normal forwards, blink 0.75s step-end infinite alternate;
+}
+
+.typewriter .role3 {
+  width: 0;
+  animation: typing 3s steps(20, end) 6s 1 normal forwards, blink 0.75s step-end infinite alternate;
+}
+
+.typewriter .role4 {
+  width: 0;
+  animation: typing 3s steps(20, end) 9s 1 normal forwards, blink 0.75s step-end infinite alternate;
+}
+
+
+  
+.about-content{
+    display: flex;
+    flex-direction: row;
+   
+}
+
+
+
+   .Workexperience p{
+    text-decoration: dotted;
+   }
+
+
+/* Default styles */
+.about-content {
+  display: flex;
+  flex-direction: column-reverse; /* For small screens, put image below the heading */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.about-content img {
+  max-width: 80%;
+  height: auto;
+  padding-top: 10px;
+}
+
+/* Media query for screens larger than 768px (tablet and up) */
+@media (min-width: 768px) {
+  .about-content {
+    flex-direction: row; /* For larger screens, use row layout */
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+
+  .about-content img {
+    max-width: 80vh; /* Adjust image size for larger screens */
+    height: 80vh;
+  }
+}
+
+   .footer{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+   }
+ 
+  
